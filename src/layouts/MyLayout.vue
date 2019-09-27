@@ -1,14 +1,20 @@
 <template>
   <q-layout view="hHh LpR fFf">
-    <q-header elevated class="bg-primary text-white" height-hint="98">
+    <q-header elevated class="bg-white text-black" height-hint="98">
       <div class="title-bar">
-        <img style="height: 45px;" src="statics/logo1.png" />
-        <q-btn flat color="black" label="首页" to="/" />
-        <q-btn flat color="black" label="热点" to="/Test" />
-        <q-btn flat color="black" label="其他" />
+        <div class="menu">
+          <img style="height: 45px;" src="statics/logo1.png" />
+          <q-btn flat label="首页" to="/" />
+          <q-btn flat label="热点" to="/Test" />
+          <q-btn flat label="其他" />
+        </div>
+        <div class="menu">
+          <q-btn flat label="登陆" to="/Login" />
+          <q-btn flat label="注册" to="/Registe" />
+        </div>
       </div>
     </q-header>
-    <q-page-container>
+    <q-page-container style="background-color: #f2f5f9;">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -22,8 +28,16 @@ export default {
 };
 </script>
 <style scoped>
-.title-bar{
-padding-top:10px;
+.title-bar {
+  padding-top: 10px;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  justify-content:space-between
+}
+.menu{
 display: flex;
+justify-content: center;
+flex-wrap:wrap;
 }
 </style>
