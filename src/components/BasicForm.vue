@@ -4,7 +4,7 @@
     style="width: 400px;background-color: white;border-radius: 0.25rem;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);"
   >
-    <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+    <q-form  @reset="onReset" class="q-gutter-md">
       <q-input
         filled
         v-model="name"
@@ -43,7 +43,7 @@
         v-if="i.password2Show"
       />
       <div>
-        <q-btn :label="i.submitBtnName" type="submit" color="primary" />
+        <q-btn :label="i.submitBtnName" @click="onSubmit" color="primary" />
         <q-btn label="清空" type="reset" color="primary" flat class="q-ml-sm"/>
       </div>
     </q-form>
@@ -62,7 +62,19 @@ export default {
   },
   props: ["i"],
   methods: {
-    onSubmit() {},
+    onSubmit() {
+      
+      if(this.i.submitBtnName&&(this.password!==this.password2)){
+        toast('两次密码输入不一致')
+        return
+      }
+
+      this.$emit('submit',{
+        name:this.name,
+        email:this.email,
+        password:this.password
+      })
+    },
     onReset() {
       this.name = null;
       this.email = null;
