@@ -22,21 +22,22 @@ export default {
   },
   methods: {
     registe(data) {
-      // console.log(data.name+data.email+data.password)
+      // postman真是个好东西
+      var rdata = new FormData();
+      rdata.append("username", data.name);
+      rdata.append("email", data.email);
+      rdata.append("passwd", data.password);
+
       this.$axios
-        .post(this.global.api.url, 
-        {
-          username:data.name,
-          email:data.email,
-          passwd:data.password
-        },
-        {
+        .post(this.global.api.url + "register", rdata, {
           headers: this.global.api.headers
         })
         .then(response => {
           // _this.$q.loading.hide();
-          console.log(response);
-          
+          // console.log(response);
+          if(response.data.code===0){
+            toast('注册成功')
+          }
         });
     }
   }
