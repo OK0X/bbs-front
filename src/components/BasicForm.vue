@@ -64,7 +64,7 @@ export default {
   methods: {
     onSubmit() {
       
-      if(this.i.submitBtnName&&(this.password!==this.password2)){
+      if(this.i.password2Show&&(this.password!==this.password2)){
         toast('两次密码输入不一致')
         return
       }
