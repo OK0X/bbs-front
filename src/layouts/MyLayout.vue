@@ -6,7 +6,7 @@
           <img style="height: 45px;" src="statics/logo1.png" />
           <q-btn flat label="首页" to="/" />
           <q-btn flat label="热点" to="/Test" />
-          <q-btn flat label="其他" />
+          <q-btn flat label="发布文章" to="/PushArticle"/>
         </div>
         <div class="menu">
           <q-btn flat label="登陆" to="/Login" />

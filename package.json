@@ -15,7 +15,8 @@
     "axios": "^0.18.1",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0",
-    "vue-toasted": "^1.1.27"
+    "vue-toasted": "^1.1.27",
+    "vue2-editor": "^2.10.2"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",

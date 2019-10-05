@@ -1,0 +1,90 @@
+<template>
+  <q-page class="mypage">
+    <q-input
+      style="width:837px;"
+      v-model="title"
+      label="标题"
+      hint
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || '请输入标题']"
+    />
+    <VueEditor v-model="content" useCustomImageHandler @image-added="handleImageAdded" />
+    <q-btn label="发布" @click="pushArticle" color="primary" style="margin-top:30px;width:100px;" />
+  </q-page>
+</template>
+
+<script>
+/* eslint-disable */
+import { VueEditor } from "vue2-editor";
+export default {
+  components: {
+    VueEditor
+  },
+  data() {
+    return {
+      title: "",
+      content: ""
+    };
+  },
+  methods: {
+    pushArticle() {
+      console.log(this.content);
+    },
+    handleImageAdded: function(file, Editor, cursorLocation, resetUploader) {
+      // An example of using FormData
+      // NOTE: Your key could be different such as:
+      // formData.append('file', file)
+
+      var formData = new FormData();
+      formData.append("image", file);
+      // console.log(file)
+      // return
+
+      this.$axios
+        .request({
+          url:
+            "https://api2.bmob.cn/2/files/" +
+            // this.global.wallet.ethAddress +
+            "test.jpg",
+          method: "post",
+          headers: {
+            "X-Bmob-Application-Id": "ac7f17d258941e666eb88514048c351a",
+            "X-Bmob-REST-API-Key": "f31e47e1bcf4d276e1bc19226abee442",
+            "Content-Type": "image/jpeg"
+          },
+          data: file
+        })
+        .then(response => {
+          // console.log(response);
+          if (response.status === 200) {
+            let url = response.data.url;
+            Editor.insertEmbed(cursorLocation, "image", url);
+            resetUploader();
+            // _this.submitinfo2bmob();
+          }
+          // _this.$q.loading.hide();
+        })
+        .catch(error => {
+          console.error(error);
+          // toast(_this.$t("smscodeerror"));
+          // _this.$q.loading.hide();
+        });
+
+      // this.$axios({
+      //   url: "https://fakeapi.yoursite.com/images",
+      //   method: "POST",
+      //   data: formData
+      // })
+      //   .then(result => {
+      //     let url = result.data.url; // Get url from response
+      //     Editor.insertEmbed(cursorLocation, "image", url);
+      //     resetUploader();
+
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
+    }
+  }
+};
+</script>
