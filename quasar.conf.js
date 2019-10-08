@@ -47,7 +47,11 @@ module.exports = function (ctx) {
 
       components: [
         'QBtn',
-        'QForm'
+        'QForm',
+        'QCard',
+      'QCardSection',
+      'QCardActions',
+      'QSeparator'
       ],
       directives: [],
 

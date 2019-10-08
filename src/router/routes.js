@@ -23,6 +23,10 @@ const routes = [
       {
         path: '/PushArticle',
         component: () => import('pages/PushArticle.vue')
+      },
+      {
+        path: '/ArticleDetail',
+        component: () => import('pages/ArticleDetail.vue')
       }
     ]
   }
