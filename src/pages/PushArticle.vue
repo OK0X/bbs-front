@@ -28,7 +28,29 @@ export default {
   },
   methods: {
     pushArticle() {
+      console.log(this.title);
       console.log(this.content);
+
+      var rdata = new FormData();
+      rdata.append("title", this.title);
+      // rdata.append("email", data.email);
+      rdata.append("content", this.content);
+
+      this.$axios
+        .post(this.global.api.url + "articles/new", rdata, {
+          headers: this.global.api.headers
+        })
+        .then(response => {
+          // _this.$q.loading.hide();
+          console.log(response);
+          if(response.data.code===0){
+            toast('发布成功')
+          }
+        }).catch(error=>{
+          console.error(error)
+          toast('请求失败')
+        })
+
     },
     handleImageAdded: function(file, Editor, cursorLocation, resetUploader) {
       // An example of using FormData

@@ -34,7 +34,7 @@ export default {
         })
         .then(response => {
           // _this.$q.loading.hide();
-          // console.log(response);
+          console.log(response);
           if(response.data.code===0){
             toast('登陆成功')
           }
