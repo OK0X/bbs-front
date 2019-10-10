@@ -74,6 +74,6 @@ export default {
 <style scoped>
 .article-detail {
   width: 100%;
-  max-width: 837px;
+  max-width: 1100px;
 }
 </style>

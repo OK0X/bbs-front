@@ -83,7 +83,7 @@ export default {
 <style scoped>
 .my-card {
   width: 100%;
-  max-width: 837px;
+  max-width: 1100px;
   margin: 5px;
 }
 </style>
