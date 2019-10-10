@@ -2,7 +2,7 @@
   "name": "ok0xbbs",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "ok0xbbs",
+  "productName": "ok0x-区块链创作者社区",
   "cordovaId": "com.ok0x.bbs",
   "author": "BlockStar <dev@ok0x.com>",
   "private": true,

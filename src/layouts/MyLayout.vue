@@ -5,11 +5,12 @@
         <div class="menu">
           <img style="height: 45px;" src="statics/logo1.png" />
           <q-btn flat label="首页" to="/" />
-          <q-btn flat label="发布文章" to="/PushArticle"/>
+          <q-btn flat label="关于我" to="/AboutMe" />
         </div>
         <div class="menu">
           <q-btn flat label="登陆" to="/Login" />
           <q-btn flat label="注册" to="/Registe" />
+          <q-btn flat round color="primary" size="md" icon="edit" to="/PushArticle"/>
         </div>
       </div>
     </q-header>
