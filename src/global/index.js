@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 const api = {
-  url: 'http://localhost:8088/app/',
+  url: 'https://bbs.ok0x.com/app/',
   headers: {
     "Content-Type": "multipart/form-data"
   }

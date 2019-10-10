@@ -38,7 +38,8 @@ export default {
 
       this.$axios
         .post(this.global.api.url + "articles/new", rdata, {
-          headers: this.global.api.headers
+          headers: this.global.api.headers,
+          "withCredentials":true
         })
         .then(response => {
           // _this.$q.loading.hide();
