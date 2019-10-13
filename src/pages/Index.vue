@@ -1,6 +1,6 @@
 <template>
   <q-page class="mypage">
-    <q-card class="my-card" @click="gotoDetail(item)" v-for="item in articles" v-bind:key="item.index">
+    <q-card flat bordered class="my-card" @click="gotoDetail(item)" v-for="item in articles" v-bind:key="item.index">
       <q-card-section style="display:flex;flex-direction: column;">
         <span style="font-family: '\5FAE\8F6F\96C5\9ED1';font-size: 25px;">{{item.title}}</span>
         <span style="color:gray">作者:{{item.author}} 发布于：{{item.pub_date}}</span>
