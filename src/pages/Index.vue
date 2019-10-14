@@ -42,7 +42,7 @@ export default {
       .get(this.global.api.url + "articles?p=" + this.page)
       .then(response => {
         // _this.$q.loading.hide();
-        console.log(response);
+        // console.log(response);
         if (response.data.code === 0) {
           this.articles=response.data.data.articles;
           this.hasNext=response.data.data.has_more

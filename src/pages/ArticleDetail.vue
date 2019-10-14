@@ -7,7 +7,7 @@
           <span style="color:gray">作者:{{article.author}} 发布于：{{article.pub_date}}</span>
         </q-card-section>
         <q-separator />
-        <q-card-section v-html="article.content" style="overflow: auto;"></q-card-section>
+        <q-card-section v-html="article.content" style="overflow: auto;" v-highlight></q-card-section>
       </q-card-section>
     </q-card>
   </q-page>
@@ -16,18 +16,15 @@
 <script>
 /* eslint-disable */
 import marked from "marked";
-import hljs from "highlight.js/lib/highlight";
-import go from "highlight.js/lib/languages/go";
-import "highlight.js/styles/a11y-light.css";
 // import 'highlight.js/styles/dark.css';
 
-hljs.registerLanguage("go", go);
+
 
 marked.setOptions({
   renderer: new marked.Renderer(),
-  highlight: function(code) {
-    return hljs.highlightAuto(code).value;
-  },
+  // highlight: function(code) {
+  //   return hljs.highlightAuto(code).value;
+  // },
   pedantic: false,
   gfm: true,
   breaks: false,
@@ -36,6 +33,7 @@ marked.setOptions({
   smartypants: false,
   xhtml: false
 });
+
 
 export default {
   data() {
