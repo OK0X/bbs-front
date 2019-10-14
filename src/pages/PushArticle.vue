@@ -1,15 +1,15 @@
 <template>
   <q-page class="mypage">
     <q-input
-      style="width:837px;"
+      style="max-width: 837px;width:100%;"
       v-model="title"
       label="标题"
       hint
       lazy-rules
       :rules="[ val => val && val.length > 0 || '请输入标题']"
     />
-    <VueEditor v-model="content" useCustomImageHandler @image-added="handleImageAdded" />
-    <q-btn label="发布" @click="pushArticle" color="primary" style="margin-top:30px;width:100px;" />
+    <VueEditor v-model="content" useCustomImageHandler @image-added="handleImageAdded"  style="height: 580px;"/>
+    <q-btn label="发布" @click="pushArticle" color="primary" style="margin-top:80px;width:100px;" />
   </q-page>
 </template>
 
@@ -111,3 +111,6 @@ export default {
   }
 };
 </script>
+<style scoped>
+
+</style>
