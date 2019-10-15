@@ -10,6 +10,10 @@
         <q-card-section v-html="article.content" style="overflow: auto;" v-highlight></q-card-section>
       </q-card-section>
     </q-card>
+    <div style="margin-top:10px;">
+      <q-btn flat color="primary" label="上一篇" @click="goPrev" />
+      <q-btn flat color="primary" label="下一篇" @click="goNext" />
+    </div>
   </q-page>
 </template>
 
@@ -17,8 +21,6 @@
 /* eslint-disable */
 import marked from "marked";
 // import 'highlight.js/styles/dark.css';
-
-
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -34,17 +36,17 @@ marked.setOptions({
   xhtml: false
 });
 
-
 export default {
   data() {
     return {
+      articleid: "",
       article: ""
     };
   },
   mounted() {
-    console.log(this.$route.query);
-    // this.item=this.$route.query.id
-    this.getDetail(this.$route.query.id);
+    // console.log(this.$route.query);
+    this.articleid = this.$route.query.id;
+    this.getDetail(this.articleid);
   },
   methods: {
     getDetail(id) {
@@ -58,13 +60,20 @@ export default {
             if (this.article.markdown) {
               this.article.content = marked(this.article.content);
             }
-            // this.hasNext=response.data.data.has_more
           }
         })
         .catch(error => {
           console.error(error);
           // toast('请求失败')
         });
+    },
+    goPrev() {
+      this.articleid--;
+      this.getDetail(this.articleid);
+    },
+    goNext() {
+      this.articleid++;
+      this.getDetail(this.articleid);
     }
   }
 };
