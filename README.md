@@ -2,25 +2,20 @@
 
 该前端网站基于 Quasar Framework 开发，关于quasar更多介绍可查看这里：https://quasar.dev/start/pick-quasar-flavour
 
-## Install the dependencies
+## 安装
 ```bash
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### 运行开发环境
 ```bash
 quasar dev
 ```
 
-### Lint the files
-```bash
-npm run lint
-```
-
-### Build the app for production
+### 打生产包
 ```bash
 quasar build
 ```
 
-### Customize the configuration
+### 配置项
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
