@@ -46,6 +46,10 @@ export default {
           console.log(response);
           if(response.data.code===0){
             toast('发布成功')
+            this.$router.replace({
+              path: "/",
+              query: ''
+            });
           }
         }).catch(error=>{
           console.error(error)
