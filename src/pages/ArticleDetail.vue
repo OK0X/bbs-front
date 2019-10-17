@@ -1,6 +1,6 @@
 <template>
   <q-page class="mypage">
-    <q-card class="article-detail">
+    <q-card flat bordered class="article-detail">
       <q-card-section>
         <q-card-section style="display:flex;flex-direction: column;">
           <h1>{{article.title}}</h1>
