@@ -8,7 +8,7 @@
       lazy-rules
       :rules="[ val => val && val.length > 0 || '请输入标题']"
     />
-    <VueEditor v-model="content" useCustomImageHandler @image-added="handleImageAdded"  style="height: 580px;"/>
+    <VueEditor v-model="content" useCustomImageHandler @image-added="handleImageAdded"  style="height: 580px;max-width: 837px;width:100%;"/>
     <q-btn label="发布" @click="pushArticle" color="primary" style="margin-top:80px;width:100px;" />
   </q-page>
 </template>
