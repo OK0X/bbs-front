@@ -24,5 +24,3 @@ quasar dev
 quasar build
 ```
 
-### 配置项
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
