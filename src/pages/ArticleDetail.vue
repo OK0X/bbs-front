@@ -8,6 +8,8 @@
         </q-card-section>
         <q-separator />
         <q-card-section v-html="article.content" style="overflow: auto;" v-highlight></q-card-section>
+        <q-separator />
+        <span style="color: #9e9e9e;">入群交流，QQ交流群：872578039 ；微信群加微信：914730875 入群，备注：ok0x</span>
       </q-card-section>
     </q-card>
     <div style="margin-top:10px;">
