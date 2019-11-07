@@ -3,7 +3,9 @@
     <q-header elevated class="bg-white text-black" height-hint="98">
       <div class="title-bar">
         <div class="menu-left">
-          <img style="height: 45px;" src="statics/logo1.png" />
+          <a href="https://b.ok0x.com">
+            <img style="height: 45px;" src="statics/logo1.png" />
+          </a>
           <div class="menu">
             <q-btn flat label="首页" to="/" />
             <q-btn flat label="关于我" to="/AboutMe" />
@@ -47,7 +49,8 @@
 export default {
   data() {
     return {};
-  }
+  },
+  methods: {}
 };
 </script>
 <style scoped>
@@ -58,7 +61,7 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.menu-left{
+.menu-left {
   display: flex;
 }
 .menu {
