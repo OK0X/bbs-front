@@ -27,10 +27,6 @@ const routes = [
       {
         path: '/ArticleDetail',
         component: () => import('pages/ArticleDetail.vue')
-      },
-      {
-        path: '/AboutMe',
-        component: () => import('pages/AboutMe.vue')
       }
     ]
   }

@@ -8,7 +8,6 @@
           </a>
           <div class="menu">
             <q-btn flat label="首页" to="/" />
-            <q-btn flat label="关于我" to="/AboutMe" />
           </div>
         </div>
         <div>
@@ -22,9 +21,6 @@
               <q-list style="min-width: 100px">
                 <q-item clickable to="/">
                   <q-item-section>首页</q-item-section>
-                </q-item>
-                <q-item clickable to="/AboutMe">
-                  <q-item-section>关于我</q-item-section>
                 </q-item>
                 <q-separator />
                 <q-item clickable to="/Login">
